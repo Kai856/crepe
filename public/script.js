@@ -1,33 +1,25 @@
-document.getElementById('numberForm').addEventListener('submit', async (event) => {
-  event.preventDefault();
-
-  const name = document.getElementById('name').value;
-  const phoneNumber = document.getElementById('phoneNumber').value;
+document.addEventListener('DOMContentLoaded', function() {
+  const numberForm = document.getElementById('numberForm');
+  const discountCode = document.getElementById('discountCode');
   const responseMessage = document.getElementById('responseMessage');
+  const crepeAnimation = document.getElementById('crepeAnimation');
+  const thankyouText = document.getElementById('thankyouText');
+  const container = document.querySelector('.container'); // Select the container to hide it later
 
-  try {
-    // Store data in Firestore
-    await database.collection('subscribers').add({
-      name: name,
-      phoneNumber: phoneNumber,
-      timestamp: new Date().toISOString()
-    });
+  numberForm.addEventListener('submit', function(event) {
+    event.preventDefault();
 
-    responseMessage.textContent = "Name and phone number stored successfully!";
-    responseMessage.style.color = "green";
+    // Show thank you message
+    responseMessage.textContent = "Thank you for signing up!";
 
-    // Clear input fields
-    document.getElementById('name').value = '';
-    document.getElementById('phoneNumber').value = '';
+    // Hide the form and the entire white box (container)
+    container.style.display = 'none';
 
-    // Hide the form
-    document.querySelector('.container').style.display = 'none';
+    // Show the crepe animation and thank you text
+    crepeAnimation.style.display = 'block';
+    thankyouText.style.display = 'block';
 
-    // Display the crepe animation
-    document.getElementById('crepeAnimation').style.display = 'block';
-    document.getElementById('thankyouText').style.display = 'block';
-  } catch (error) {
-    responseMessage.textContent = "Error storing the information: " + error;
-    responseMessage.style.color = "red";
-  }
+    // Show the discount code "Joaquin" after form submission
+    discountCode.style.display = 'block';
+  });
 });

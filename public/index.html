@@ -13,6 +13,7 @@
 
   <!-- Importing Google Fonts for a more elegant feel -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Link to your external stylesheet -->
   <link rel="stylesheet" href="style.css">
@@ -20,6 +21,8 @@
 <body>
   <div class="container">
     <h1>Join Our List!</h1>
+    <h2>Sign up today and get <span style="color: #ed2939; font-weight: bold;">50% off</span> your next crepe!</h2> <!-- Discount message -->
+
     <form id="numberForm">
       <label for="name">Enter your name:</label>
       <input type="text" id="name" placeholder="Your Name" required>
@@ -31,9 +34,11 @@
     <p id="responseMessage"></p>
   </div>
 
-  <div id="crepeAnimation" style="display: none; text-align: center;">
+  <div id="crepeAnimation" style="display: none;">
     <img src="MrCrepe.png" alt="French Crepe Animation" id="crepeImage">
-    <h1 id="thankyouText" style="display: none;">Thank you!</h1>
+    <h1 id="thankyouText" style="display: none;">Merci! Enjoy your 50% discount!</h1>
+<h2 id="discountCode" style="display: none; color: #ed2939; font-weight: bold;">Use code "Joaquin" for 50% off!</h2>
+
   </div>
 
   <!-- Include your Firebase config and script -->
