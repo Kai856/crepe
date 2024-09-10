@@ -3,46 +3,48 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
   }
   
   /* Body styling */
   body {
-    font-family: 'Roboto Slab', serif; /* Use the imported font and fallback to serif */
+    font-family: 'Roboto Slab', serif; /* Main font */
     background-color: #f0f0f5; /* Light background for contrast */
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
   }
-  h1, h2, h3, p, label, button {
-    font-family: 'Playfair Display', serif;
-  }
-  
   
   /* Container for the form */
   .container {
     background-color: #ffffff;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Soft shadow for elegance */
-    width: 300px;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15); /* Soft shadow for elegance */
+    width: 350px;
     text-align: center;
-    border: 2px solid #002395; /* Blue border for a French touch */
+    border: 2px solid #002395; /* French blue border */
   }
   
   /* Headline */
   h1 {
     color: #002395; /* French blue */
     font-size: 28px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     font-weight: bold;
+  }
+  
+  /* Subheadline with discount offer */
+  h2 {
+    color: #002395;
+    font-size: 18px;
+    margin-bottom: 25px;
   }
   
   /* Input label styling */
   form label {
     font-size: 16px;
-    color: #002395; /* French blue */
+    color: #002395;
     margin-bottom: 10px;
     display: block;
   }
@@ -51,18 +53,23 @@
   input[type="text"] {
     padding: 12px;
     width: 100%;
-    border-radius: 6px;
+    border-radius: 8px;
     border: 1px solid #ccc;
     font-size: 16px;
     margin-bottom: 20px; /* Adds spacing between fields */
     outline: none;
+    transition: border-color 0.3s;
+  }
+  
+  input[type="text"]:focus {
+    border-color: #002395; /* Blue focus border */
   }
   
   /* Submit button styling */
   button {
     padding: 12px;
     width: 100%;
-    border-radius: 6px;
+    border-radius: 8px;
     background-color: #ed2939; /* French red */
     color: white;
     border: none;
@@ -83,11 +90,8 @@
     color: #333;
   }
   
-
-  /*Mr crepe animation&*/
-
-  /* Style for the hidden crepe animation */
-#crepeAnimation {
+  /* Crepe Animation */
+  #crepeAnimation {
     text-align: center;
     margin-top: 20px;
   }
