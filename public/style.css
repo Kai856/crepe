@@ -1,0 +1,120 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+  }
+  
+  /* Body styling */
+  body {
+    font-family: 'Roboto Slab', serif; /* Use the imported font and fallback to serif */
+    background-color: #f0f0f5; /* Light background for contrast */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  h1, h2, h3, p, label, button {
+    font-family: 'Playfair Display', serif;
+  }
+  
+  
+  /* Container for the form */
+  .container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Soft shadow for elegance */
+    width: 300px;
+    text-align: center;
+    border: 2px solid #002395; /* Blue border for a French touch */
+  }
+  
+  /* Headline */
+  h1 {
+    color: #002395; /* French blue */
+    font-size: 28px;
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+  
+  /* Input label styling */
+  form label {
+    font-size: 16px;
+    color: #002395; /* French blue */
+    margin-bottom: 10px;
+    display: block;
+  }
+  
+  /* Input field styling */
+  input[type="text"] {
+    padding: 12px;
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    margin-bottom: 20px; /* Adds spacing between fields */
+    outline: none;
+  }
+  
+  /* Submit button styling */
+  button {
+    padding: 12px;
+    width: 100%;
+    border-radius: 6px;
+    background-color: #ed2939; /* French red */
+    color: white;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #d22635; /* Darker red on hover */
+  }
+  
+  /* Response message styling */
+  p#responseMessage {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #333;
+  }
+  
+
+  /*Mr crepe animation&*/
+
+  /* Style for the hidden crepe animation */
+#crepeAnimation {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  /* The crepe image animation */
+  #crepeImage {
+    width: 300px; /* Adjust the size as needed */
+    height: auto;
+    animation: rotateCrepe 2s infinite ease-in-out;
+  }
+  
+  /* Keyframes for the animation */
+  @keyframes rotateCrepe {
+    0% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(45deg);
+    }
+    50% {
+      transform: rotate(0deg);
+    }
+    75% {
+      transform: rotate(-45deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+  

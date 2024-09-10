@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Join Our List!</title>
+
+  <!-- Firebase App (the core Firebase SDK) -->
+  <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-auth-compat.js"></script>
+
+  <!-- Importing Google Fonts for a more elegant feel -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Link to your external stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Join Our List!</h1>
+    <form id="numberForm">
+      <label for="name">Enter your name:</label>
+      <input type="text" id="name" placeholder="Your Name" required>
+      
+      <label for="phoneNumber">Enter your phone number:</label>
+      <input type="text" id="phoneNumber" placeholder="(123) 456-7890" required>
+      <button type="submit">Submit</button>
+    </form>
+    <p id="responseMessage"></p>
+  </div>
+
+  <div id="crepeAnimation" style="display: none; text-align: center;">
+    <img src="MrCrepe.png" alt="French Crepe Animation" id="crepeImage">
+    <h1 id="thankyouText" style="display: none;">Thank you!</h1>
+  </div>
+
+  <!-- Include your Firebase config and script -->
+  <script src="firebase.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
