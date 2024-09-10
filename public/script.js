@@ -1,25 +1,42 @@
 document.addEventListener('DOMContentLoaded', function() {
   const numberForm = document.getElementById('numberForm');
-  const discountCode = document.getElementById('discountCode');
+  const nameInput = document.getElementById('name');
+  const phoneNumberInput = document.getElementById('phoneNumber');
   const responseMessage = document.getElementById('responseMessage');
   const crepeAnimation = document.getElementById('crepeAnimation');
   const thankyouText = document.getElementById('thankyouText');
-  const container = document.querySelector('.container'); // Select the container to hide it later
+  const container = document.querySelector('.container');
+  const discountCode = document.getElementById('discountCode');
 
   numberForm.addEventListener('submit', function(event) {
     event.preventDefault();
 
-    // Show thank you message
-    responseMessage.textContent = "Thank you for signing up!";
+    // Get input values
+    const name = nameInput.value;
+    const phoneNumber = phoneNumberInput.value;
 
-    // Hide the form and the entire white box (container)
-    container.style.display = 'none';
+    // Validate input
+    if (name === "" || phoneNumber === "") {
+      responseMessage.textContent = "Please fill out all fields.";
+      return;
+    }
 
-    // Show the crepe animation and thank you text
-    crepeAnimation.style.display = 'block';
-    thankyouText.style.display = 'block';
-
-    // Show the discount code "Joaquin" after form submission
-    discountCode.style.display = 'block';
+    // Upload data to Firebase Firestore
+    db.collection("signups").add({
+      name: name,
+      phoneNumber: phoneNumber,
+      timestamp: firebase.firestore.FieldValue.serverTimestamp()
+    })
+    .then(() => {
+      // Success feedback
+      responseMessage.textContent = "Thank you for signing up!";
+      container.style.display = 'none';
+      crepeAnimation.style.display = 'block';
+      thankyouText.style.display = 'block';
+      discountCode.style.display = 'block';
+    })
+    .catch((error) => {
+      responseMessage.textContent = `Error: ${error.message}`;
+    });
   });
 });
